@@ -9,7 +9,7 @@ public class LibraryService {
         //Code to add new book
     }
 
-    public void getBooks(Book book) {
+    public void getBooks() {
         //Code to get books
     }
 

@@ -14,8 +14,15 @@ public class LibraryController {
     }
 
     @PostMapping("/addBook")
-    public String getBook(@RequestBody Book book) {
+    public String addBook(@RequestBody Book book) {
         libraryService.addBook(book);
         return "Book added";
     }
+
+    @GetMapping("/getBook")
+    public String getBook(@PathVariable String title, @PathVariable String author, @PathVariable String isbn, @PathVariable String publishedYear) {
+        libraryService.getBooks();
+        return "Books in the library: " ;
+    }
+
 }
