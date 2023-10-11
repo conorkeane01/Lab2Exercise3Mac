@@ -3,6 +3,8 @@ package ie.atu.lab2exercise3mac.lab2exercise3mac;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class LibraryController {
@@ -20,9 +22,8 @@ public class LibraryController {
     }
 
     @GetMapping("/getBook")
-    public String getBook(@PathVariable String title, @PathVariable String author, @PathVariable String isbn, @PathVariable String publishedYear) {
-        libraryService.getBooks();
-        return "Books in the library: " ;
+    public @ResponseBody List<Book> getBooks() {
+        return libraryService.getBooks();
     }
 
 }
